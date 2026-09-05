@@ -11,3 +11,18 @@
   - **External Storage**: Seagate external drive 2TB (mounted for Nextcloud)
 
 All services run as LXC containers or VMs on this single host.
+
+
+### Services
+
+The lab is split into infrastructure services (LXC containers) and virtual machines used for security testing.
+
+#### LXC Containers
+
+- **WireGuard**: A modern, lightweight VPN providing secure remote access to the lab without exposing internal services directly to the internet.
+- **Nextcloud**: A self-hosted file storage and sync platform, backed by an external drive mounted to the host.
+
+#### Virtual Machines
+
+- **Kali Linux**: An offensive-security distribution used as the attack box, equipped with tools such as Metasploit and Nmap.
+- **Metasploitable 2**: A deliberately vulnerable Linux target used to practice and document attacks in an isolated environment.
