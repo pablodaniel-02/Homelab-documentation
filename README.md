@@ -26,3 +26,11 @@ The lab is split into infrastructure services (LXC containers) and virtual machi
 
 - **Kali Linux**: An offensive-security distribution used as the attack box, equipped with tools such as Metasploit and Nmap.
 - **Metasploitable 2**: A deliberately vulnerable Linux target used to practice and document attacks in an isolated environment.
+
+ ### Roadmap
+
+The lab currently runs as a flat setup on a single Proxmox host. The next phase focuses on turning it into a segmented SOC environment for hands-on detection work:
+
+- **Network segmentation with pfSense**: Introduce pfSense as the lab firewall/router, splitting the environment into isolated attacker and target/monitoring VLANs so the vulnerable machines can't reach the home network.
+- **SIEM with Wazuh**: Deploy Wazuh as the central SIEM, with agents on a Windows Server and Linux hosts plus Sysmon telemetry, so activity across the lab is collected and searchable.
+- **Detection engineering loop**: Run controlled attacks against the target zone, catch them in the SIEM, and write custom detection rules mapped to MITRE ATT&CK — building toward a documented attack → detect → tune workflow.
